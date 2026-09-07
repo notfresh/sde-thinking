@@ -14,9 +14,10 @@
 | 006 | [一个项目技术负责人的思考-第一篇-代码质量与团队协作](./006-code-quality-team-collab.md) | 项目负责人一线实践：Code Review、技术债、协作适配 | 已发布 |
 | 007 | [我从抽象理论推演和过度设计中幡然悔悟](./007-set-difference-sync.md) | 学习观：以问题复杂度作为理论推演复杂度的依据 | 已发布 |
 | 008 | [为什么我一度想放弃做 Coding Agent](./008-why-not-coding-agent.md) | 职业选择观：coding agent 是舞台不是终点，问题才是主角 | 已发布 |
-| 009 | [一份改动的旅程：从 diff 到 cherry-pick](./009-diff-patch-merge-cherry-pick.md) | 技术心智模型：diff/patch/apply/merge/cherry-pick 的演化史 | 待发布 |
+| 009 | [一份改动的旅程：从 diff 到 cherry-pick](./009-diff-patch-merge-cherry-pick.md) | 技术心智模型：diff/patch/apply/merge/cherry-pick 的演化史 | 已发布 |
 | 010 | [软件为什么复杂（第一篇）：原理简单是压缩，软件复杂是展开](./010-why-software-is-complex.md) | 开篇：原理是压缩后的模型，软件是把被压缩的细节全部展开 | 已发布 |
 | 011 | [什么是架构](./011-what-is-architecture.md) | 元认知·第一篇：架构是三件事（边界 / 责任分配 / 不变的东西），不是模块划分、技术选型、画图 | 已发布 |
+| 012 | [开源参与问题：CodingAgent代码太多而你甚至自己没细看代码！](./012-agent-code-too-much.md) | Agent 时代的工程治理：写太快→godfile，合太慢→PR/issue 积压；贡献的不是 commit，是代码活下去的能力 | 已发布 |
 
 ## 关于
 
