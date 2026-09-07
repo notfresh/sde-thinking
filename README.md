@@ -15,6 +15,7 @@
 | 007 | [我从抽象理论推演和过度设计中幡然悔悟](./007-set-difference-sync.md) | 学习观：以问题复杂度作为理论推演复杂度的依据 | 已发布 |
 | 008 | [为什么我一度想放弃做 Coding Agent](./008-why-not-coding-agent.md) | 职业选择观：coding agent 是舞台不是终点，问题才是主角 | 已发布 |
 | 009 | [一份改动的旅程：从 diff 到 cherry-pick](./009-diff-patch-merge-cherry-pick.md) | 技术心智模型：diff/patch/apply/merge/cherry-pick 的演化史 | 待发布 |
+| 010 | [软件为什么复杂（第一篇）：原理简单是压缩，软件复杂是展开](./010-why-software-is-complex.md) | 开篇：原理是压缩后的模型，软件是把被压缩的细节全部展开 | 已发布 |
 
 ## 关于
 
