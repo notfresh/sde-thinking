@@ -58,7 +58,7 @@ theirs（要合入的）  ← 对方那边
 
 cherry-pick 是 merge 家族里的"精确制导"：**从别的分支摘一个提交过来**。
 
-```
+```bash
 git cherry-pick featureX
 ```
 
@@ -66,7 +66,40 @@ git cherry-pick featureX
 
 **最容易踩的误区**：`cherry-pick featureX` 只摘**一个**提交（分支尖端的那个），带的是一份 diff——"这个提交相对它爸爸改了什么"。连着摘两个提交要用区间 `git cherry-pick b..c`。而且它也会失败：如果被摘的改动和目标分支撞在同一区域，三方合并照样冲突，需要你手工裁决。
 
-## 第六站：省略版与完整版（diff 的最后一层窗户纸）
+## 第六站：format-patch 与 git am，离线搬运一批樱桃
+
+第五站 cherry-pick 摘的是**当场、在线**的一颗樱桃——本机一条命令搞定。真实世界里常有断网、跨仓库、邮件审核、跨组织交接的场景，git 的解法是把"算出 diff → 应用"两步**固化到文件**：
+
+```bash
+# 1. 导出：从 A 分支摘 a..b 这一段，每段一个 .patch
+git format-patch a..b --output-dir ./patches/
+
+# 2. 搬运：scp / U 盘 / 邮件附件 / 跨 git clone —— 怎么传都行
+scp ./patches/*.patch user@other-host:~/patches/
+
+# 3. 应用：在目标仓库，文件名字典序就是提交顺序
+git am ~/patches/*.patch
+```
+
+这一发一收，就是 git **邮件基因**的活化石。`format-patch` 不是普通 diff——它把邮件头（作者、时间、commit message）一起打包；`git am` 不只是 `apply` 的别名——它读完邮件头，**自动 commit**，把作者身份原样还原。
+
+### 樱桃家族对照
+
+| 命令 | 适用范围 | 副作用 | 撞冲突怎么办 |
+|---|---|---|---|
+| `git cherry-pick <c>` | 本机在线、单个或一段 | 直接 commit 到当前分支 | 停在那，留冲突标记，你解完 `git cherry-pick --continue` |
+| `git format-patch + git am` | 离线、跨仓库、邮件审核 | 在目标仓自动 commit，作者保留 | `git am` 比 cherry-pick 更狠——**完全回滚**该 patch，不留半成品；解冲突后 `git am --continue`，或 `git am --abort` 干净退出 |
+
+**一句话区别**：cherry-pick 是"我亲手摘"——保留本地分支脉络；format-patch + am 是"快递送樱桃"——把作者身份和提交原样打包，可以穿越网络、组织、时空。
+
+### 踩坑点
+
+1. **顺序敏感**：`*.patch` 通配符按文件名字典序展开，等价于时间轴。不要乱改名。
+2. **中途失败的清理**：冲突时 `git am` 完全回滚；要保留现场用 `git am --abort` 退出而不是强解。
+
+2005 年 Linus 两周写出 git 时，就是用 `format-patch`/`am` 给 Linux 内核维护者发补丁。今天的 PR 是这条路线的 web 化，但你点 "Merge" 按钮的那一瞬间，浏览器背后跑的就是 `format-patch` + `git am` 的现代版——只是 patch 不走邮件、走 HTTP。
+
+## 第七站：省略版与完整版（diff 的最后一层窗户纸）
 
 `git diff A B` 是通用格式，完整版只有**一种形态**：
 
