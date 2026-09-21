@@ -22,6 +22,7 @@
 | 014 | [当"氛围编程"变成"抽卡游戏"：一次AI协作的沮丧实录](./014-vibe-coding-gacha.md) | AI 协作反思：再好的模型遇到细微问题也需要人介入；工具越强，人越不能丢掉对代码的掌控 | 已发布 |
 | 015 | [如何阅读AI写的代码](./015-ai-coding-cant-understand.md) | AI 代码可读性问题 | 已发布 |
 | 016 | [coding agent 不是万能的，你能不能给 AI 兜底?](./016-ai-cant-bail-you-out.md) | 用 AI 编程·第一篇：AI 放大你的能力，但不替你兜底——能力边界就是 AI 能帮你的边界 | 已发布 |
+| 017 | [和 Coding Agent 沟通，如何不迷失自我](./017-coding-agent-not-lose-yourself.md) | 用 AI 编程·第二篇：抓住核心原理、守住缰绳、看不懂就停、能简单就简单——和 Coding Agent 协作时的方法论 | 已发布 |
 
 ## 参考阅读
 
