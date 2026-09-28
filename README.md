@@ -31,6 +31,12 @@
 
 - [软件基本功没死，它在 AI 时代变得更值钱了](./notes/lu-sanjin-software-fundamentals-in-ai-era.md) —— 陆三金，2026-04-28（知乎）。围绕 Matt Pocock 的 `mattpocock/skills`，讲六个 AI 编程失败模式与解法：设计概念、通用语言、反馈循环、深模块、灰箱、DAG 看板；核心论点=软件工程基本功在 AI 时代被放大而不是过时。
 
+## CS Wiki
+
+计算机基础/工程概念的通俗笔记，独立编号，与上方文章系列分开管理。
+
+- [001 BM25：TF-IDF 的实战升级版](./cs-wiki/001-bm25-vs-tfidf.md) — 通俗讲清楚 BM25 改进了 TF-IDF 的哪两个毛病
+
 ## 关于
 
 - 语言：中文
