@@ -136,11 +136,17 @@ diff 就是拿时间轴上任意两个时刻对比，`+` 永远指向更新的�
 
 ## 第八站：diff vs rebase——只读观察者 vs 历史重写器
 
+`git diff A B` 和 `git rebase A B`是不一样的。
+
 第七站讲了 diff 命令族自己的默认参数，但 git 命令族里还藏着一对更深的反差：**diff 是只读的差异比较器，rebase 是写入式的历史重写器**。两者名字像、from→to 语法像，但默认隐藏的最后一个参数含义完全不同。
+
+git rebase <upstream>                    # 把当前分支变基到 upstream 上
+git rebase <upstream> <branch>           # 先切换到 branch，再变基到 upstream
+git rebase --onto <newbase> <upstream> <branch>  # 把 branch 从 upstream 之后的部分移到 newbase
 
 先拆 rebase 在做什么：
 
-> rebase 是把 A 分支自分叉点之后的全部提交，按 B 最新端的提交顺序"重放"一遍，等于把 A 这根树枝嫁接到 B 这棵新干上。A 的提交内容不变，但所有提交的 hash 全部变了——历史被重排了。
+> git rebase A B 的意思是，把B的提交移植到以A为底座的分支上，对提交历史整形
 
 再看两者的 from→to 默认值：
 
