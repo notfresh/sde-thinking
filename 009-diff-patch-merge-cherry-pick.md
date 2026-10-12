@@ -111,10 +111,12 @@ git diff 旧 新
 
 | 命令 | 等价完整版 | 回答的问题 |
 |---|---|---|
-| `git diff` | `git diff 暂存区 工作区` | 改了还没 add 的 |
-| `git diff --staged` | `git diff HEAD 暂存区` | add 了还没 commit 的 |
+| `git diff` | `git diff 暂存区 工作区` | 改了还没 add 的, 因为 工作区是最新的，暂存区相对来说，比较落后，默认的追赶对象都是工作区 |
+| `git diff --staged` | `git diff HEAD 暂存区` | add 了还没 commit 的, 比较stage区新增的 |
 | `git diff HEAD` | `git diff HEAD 工作区` | 所有没提交的改动 |
 | `git diff <commit>` | `git diff <commit> 工作区` | 某提交之后我改了什么 |
+
+主要要理解的几个区的追感顺序才行。
 
 **默认参数规则**（最容易绕晕的点）：
 
