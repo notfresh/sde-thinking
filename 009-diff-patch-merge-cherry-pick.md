@@ -162,6 +162,16 @@ git rebase --onto <newbase> <upstream> <branch>  # 把 branch 从 upstream 之�
 
 一条主线补完：diff 看的是**当下时刻的差异**，rebase 改的是**未来的历史脉络**。前者写报告，后者改账本。
 
+rebase有1个命令很重要，rebase --abort 做不下去就撤回。
+
+如果rebase 冲突了，比如在 rebase main tui-alias , 代码次序是这样的。
+```
+<<<<<<< HEAD
+# main 的代码
+=======
+# tui-alias 的代码
+>>>>>>> fdb7aa441b
+```
 ## 尾声：一条演化链
 
 把时间线串起来看，这就是一部"改动如何长距离传输"的演化史：
