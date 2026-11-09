@@ -39,6 +39,7 @@
 - [002 Builder 模式：构造复杂对象的链式写法](./cs-wiki/002-builder-pattern.md) — 通俗讲清楚 Builder 解决了"一长串构造器参数"的两个毛病：参数命名无含义、可选参数难处理
 - [003 消息派发与鸭子类型：Go 隐式接口的对比](./cs-wiki/003-message-dispatch-duck-typing-vs-go.md) — 通俗讲清楚 Ruby 消息派发（运行时鸭子类型）与 Go 隐式接口（编译期鸭子类型）的区别：检查时机与契约锁死程度
 - [004 IndexedDB：浏览器自带的 NoSQL 数据库](./cs-wiki/004-indexeddb-browser-nosql.md) — 通俗讲清楚怎么观察浏览器里的 IndexedDB：DevTools 的 Application 面板查看、`indexedDB.databases()` 脚本化列库
+- [005 RAG 已死？——从"检索"到"上下文工程"的范式演进](./cs-wiki/005-rag-is-dead-context-engineering.md) — 拆解"RAG 已死"这句营销号式口号的真实含义：不是技术被淘汰，而是 RAG 从检索管道向 Agentic RAG / 上下文工程的角色转变
 
 ## 关于
 
